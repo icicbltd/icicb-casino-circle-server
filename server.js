@@ -75,8 +75,7 @@ gameSocket = io.on('connection', function (socket) {
       try {
         await axios.post(process.env.PLATFORM_SERVER + "api/games/winlose", {
           token: usertoken,
-          amount: earnAmount,
-          winState: true
+          amount: earnAmount
         });
       } catch (err) {
         throw new Error("1")
@@ -131,7 +130,6 @@ function Gettotalrandom(segment) {
 }
 async function gameResult(risk, segment, betAmount, random) {
   var earnamount;
-  var totalrandom;
   if (risk == 0) {
     if (segment == 0) {
       if (random == 7) {
