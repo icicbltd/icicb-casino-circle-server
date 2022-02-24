@@ -74,7 +74,7 @@ gameSocket = io.on('connection', function (socket) {
       console.log(earnAmount);
       try {
         await axios.post(process.env.PLATFORM_SERVER + "api/games/winlose", {
-          token: usertoken,
+          token: req.token,
           amount: earnAmount
         });
       } catch (err) {
